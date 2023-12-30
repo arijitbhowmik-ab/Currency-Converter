@@ -74,7 +74,7 @@ form input{
 .msg{
     margin: 2rem 0;
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     font-weight: bolder;
 }
 form button{
@@ -93,5 +93,25 @@ form button:hover{
     }
     .container h2{
         font-size: 1.785rem;
+    }
+}
+
+/*---------------loader-----------------*/
+.loader{
+    height: 6rem;
+    width: 6rem;
+    border: 4.5px solid orange;
+    border-radius: 50%;
+    position: absolute;
+    border-bottom: 4.5px solid white;
+    animation: loader 1.25s infinite linear;
+    display: none;
+}
+@keyframes loader {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
     }
 }

@@ -4,6 +4,8 @@ const btn = document.querySelector('form button')
 const fromCurr = document.querySelector('.from select')
 const toCurr = document.querySelector('.to select')
 const msg = document.querySelector('.msg')
+const loader = document.getElementsByClassName('loader')[0]
+const mainBox = document.querySelector('.container')
 
 window.addEventListener("load", () => {
     updateExchangeValue()
@@ -49,8 +51,12 @@ const updateExchangeValue = async () => {
 
     console.log(fromCurr)
     const URL = `${BASE_URL}/${fromCurr.value.toLowerCase()}/${toCurr.value.toLowerCase()}.json`
+    loader.style.display = 'block'
+    mainBox.style.display = 'none'
     let response = await fetch(URL)
     let data = await response.json()
+    mainBox.style.display = 'block'
+    loader.style.display = 'none'
     let rate = data[toCurr.value.toLowerCase()]
     let finalAmount = amtval*rate
     msg.innerText = `${amtval} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`
