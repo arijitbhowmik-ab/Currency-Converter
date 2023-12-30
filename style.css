@@ -103,7 +103,7 @@ form button:hover{
     border: 4.5px solid orange;
     border-radius: 50%;
     position: absolute;
-    border-bottom: 4.5px solid white;
+    border-bottom: 4.5px solid #f4e4ba;
     animation: loader 1.25s infinite linear;
     display: none;
 }
